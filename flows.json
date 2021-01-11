@@ -7,6 +7,30 @@
         "info": ""
     },
     {
+        "id": "fec999a.0284068",
+        "type": "telegram bot",
+        "botname": "AlertEventBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
         "id": "a71cdb51.e2f478",
         "type": "inject",
         "z": "3af82246.3634ae",
@@ -50,5 +74,37 @@
         "x": 410,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "6af5bdac.3470d4",
+        "type": "telegram receiver",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "bot": "fec999a.0284068",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "b41db8b.a796b48",
+                "9f6cc921.0492a8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b41db8b.a796b48",
+        "type": "telegram sender",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "bot": "fec999a.0284068",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 180,
+        "wires": [
+            []
+        ]
     }
 ]
