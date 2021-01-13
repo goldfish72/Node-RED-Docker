@@ -2,14 +2,14 @@
     {
         "id": "3af82246.3634ae",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Telegram-Tester",
         "disabled": false,
         "info": ""
     },
     {
         "id": "67c40db7.8c5074",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "MQTT-Broker",
         "disabled": false,
         "info": ""
     },
@@ -166,7 +166,7 @@
         "keyname": "",
         "dburl": "",
         "usetls": false,
-        "x": 150,
+        "x": 130,
         "y": 100,
         "wires": [
             []
