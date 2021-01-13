@@ -124,5 +124,42 @@
         "x": 620,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "aef3bc75.a684a",
+        "type": "tcp in",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "server": "client",
+        "host": "0.0.0.0",
+        "port": "1025",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "5",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "3dbe313a.79285e"
+            ]
+        ]
+    },
+    {
+        "id": "3dbe313a.79285e",
+        "type": "debug",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 300,
+        "wires": []
     }
 ]
