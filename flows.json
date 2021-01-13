@@ -104,7 +104,25 @@
         "x": 400,
         "y": 180,
         "wires": [
-            []
+            [
+                "61e61209.83642c"
+            ]
         ]
+    },
+    {
+        "id": "61e61209.83642c",
+        "type": "debug",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 200,
+        "wires": []
     }
 ]
