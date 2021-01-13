@@ -7,6 +7,13 @@
         "info": ""
     },
     {
+        "id": "67c40db7.8c5074",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "fec999a.0284068",
         "type": "telegram bot",
         "botname": "AlertEventBot",
@@ -29,6 +36,27 @@
         "useselfsignedcertificate": false,
         "sslterminated": false,
         "verboselogging": false
+    },
+    {
+        "id": "f8c4b6f0.b800e8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
     },
     {
         "id": "a71cdb51.e2f478",
@@ -126,30 +154,87 @@
         "wires": []
     },
     {
-        "id": "aef3bc75.a684a",
-        "type": "tcp in",
-        "z": "3af82246.3634ae",
-        "name": "",
-        "server": "client",
-        "host": "0.0.0.0",
-        "port": "1025",
-        "datamode": "stream",
-        "datatype": "utf8",
-        "newline": "5",
-        "topic": "",
-        "base64": false,
+        "id": "cbbdf342.481e4",
+        "type": "aedes broker",
+        "z": "67c40db7.8c5074",
+        "name": "MQTT-Broker",
+        "mqtt_port": 1883,
+        "mqtt_ws_port": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 150,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a14b44.b6a164c",
+        "type": "inject",
+        "z": "67c40db7.8c5074",
+        "name": "MQTT Test Msg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tests/mqtt",
+        "payload": "Test Msg",
+        "payloadType": "str",
         "x": 170,
-        "y": 300,
+        "y": 240,
         "wires": [
             [
-                "3dbe313a.79285e"
+                "a48a5de1.36ced"
             ]
         ]
     },
     {
-        "id": "3dbe313a.79285e",
+        "id": "a48a5de1.36ced",
+        "type": "mqtt out",
+        "z": "67c40db7.8c5074",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "f8c4b6f0.b800e8",
+        "x": 400,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9f9031d6.3c591",
+        "type": "mqtt in",
+        "z": "67c40db7.8c5074",
+        "name": "",
+        "topic": "tests/mqtt",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "f8c4b6f0.b800e8",
+        "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "2ed3b527.a5549a"
+            ]
+        ]
+    },
+    {
+        "id": "2ed3b527.a5549a",
         "type": "debug",
-        "z": "3af82246.3634ae",
+        "z": "67c40db7.8c5074",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -158,8 +243,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
-        "y": 300,
+        "x": 400,
+        "y": 320,
         "wires": []
     }
 ]
